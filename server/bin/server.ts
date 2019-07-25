@@ -1,18 +1,17 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import Debug from 'debug';
-import { environmentSanityCheck } from '../src/utils/environment-sanity';
 import { ServerApp } from '../src/app';
+import { cDebug } from '../src/utils/custom-debug';
+import { environmentSanityCheck } from '../src/utils/environment-sanity';
+import {
+  uncaughtExceptionHandler,
+  unhandledRejectionHandler
+} from '../src/errors/error-handlers';
 
-const debug = Debug('giorgiofederici:server');
+const debug = cDebug(__filename);
 
 // Listen for the uncaught exceptions
-// Exit immediately the process, do not close the server carefully
-process.on('uncaughtException', (err: Error) => {
-  debug('UNCAUGHT EXCEPTION! Shutting down...');
-  debug(err.name, err);
-  process.exit(1);
-});
+uncaughtExceptionHandler();
 
 // Set the environment variables, works only in DEV
 dotenv.config({ path: `${__dirname}/../config.env` });
@@ -38,13 +37,8 @@ const server = serverApp.app.listen(port, () => {
   debug(`App running on port ${port}...`);
 });
 
-process.on('unhandledRejection', (err: Error) => {
-  debug('UNHANDLER REJECTION! Shutting down...');
-  debug(err.name, err.message);
-  server.close(() => {
-    process.exit(1);
-  });
-});
+// Listener for unhandledRejection event
+unhandledRejectionHandler(server);
 
 process.on('SIGTERM', () => {
   debug('SIGTERM received. Shutting down gracefully...');

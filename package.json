@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Giorgio Federici's personal website. [Backend]",
   "scripts": {
-    "start": "set \"DEBUG=giorgiofederici:*\" && nodemon"
+    "start": "set \"DEBUG=gf:*\" && npm run local:nodemon",
+    "test": "npm run local:jest --coverage",
+    "local:nodemon": "./node_modules/.bin/nodemon",
+    "local:jest": "./node_modules/.bin/jest"
   },
   "author": "Giorgio Federici",
   "private": true,
@@ -37,13 +40,16 @@
     "@types/express-rate-limit": "^3.3.1",
     "@types/helmet": "0.0.43",
     "@types/hpp": "^0.2.1",
+    "@types/jest": "^24.0.15",
     "@types/mongodb": "^3.1.20",
     "@types/mongoose": "^5.3.20",
     "@types/morgan": "^1.7.35",
     "@types/node": "^11.10.4",
     "@types/shelljs": "^0.8.3",
+    "jest": "^24.8.0",
     "ndb": "^1.1.4",
     "shelljs": "^0.8.3",
+    "ts-jest": "^24.0.2",
     "ts-node": "^8.0.2",
     "typescript": "^3.5.3"
   }

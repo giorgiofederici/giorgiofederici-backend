@@ -1,0 +1,177 @@
+[
+  {
+    "name": "Java",
+    "type": "it",
+    "experience": 4
+  },
+  {
+    "name": "Angular2+",
+    "type": "it",
+    "experience": 4
+  },
+  {
+    "name": "NodeJS",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "JavaScript",
+    "type": "it",
+    "experience": 4
+  },
+  {
+    "name": "Html/Css",
+    "type": "it",
+    "experience": 4
+  },
+  {
+    "name": "TypeScript",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "Express",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "SAP ByDesign",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "Maven",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Gulp",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Hibernate",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "MySQL",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "MongoDB",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "Eclipse",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "VS Code",
+    "type": "it",
+    "experience": 3
+  },
+  {
+    "name": "PostgreSQL",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Spring",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Wordpress",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Sass",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Git",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "AWS",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Azure",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Chef",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "OpenShift",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "Tomcat",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "JBoss",
+    "type": "it",
+    "experience": 2
+  },
+  {
+    "name": "OracleDB",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "ExtJS",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "Richfaces",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "PHP",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "JSF",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "Laravel",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "Seam",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "Illustrator",
+    "type": "it",
+    "experience": 1
+  },
+  {
+    "name": "Photoshop",
+    "type": "it",
+    "experience": 1
+  }
+]

@@ -31,9 +31,9 @@ mongoose
 
 const port = process.env.PORT || 3000;
 // Express App
-const serverApp = new ServerApp();
+const serverApp = ServerApp.bootstrap();
 
-const server = serverApp.app.listen(port, () => {
+export const server = serverApp.getApp().listen(port, () => {
   debug(`App running on port ${port}...`);
 });
 

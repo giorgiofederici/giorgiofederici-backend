@@ -1,3 +1,4 @@
+import https from 'https';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { ServerApp } from '../src/app';
@@ -7,6 +8,7 @@ import {
   uncaughtExceptionHandler,
   unhandledRejectionHandler
 } from '../src/errors/error-handlers';
+import { Server } from 'http';
 
 const debug = cDebug(__filename);
 
@@ -33,9 +35,23 @@ const port = process.env.PORT || 3000;
 // Express App
 const serverApp = ServerApp.bootstrap();
 
-export const server = serverApp.getApp().listen(port, () => {
-  debug(`App running on port ${port}...`);
-});
+let server: Server;
+
+if (process.env.NODE_ENV === 'production') {
+  const sslOptions = {
+    key: process.env.SSL_KEY_PATH,
+    cert: process.env.SSL_CERT_PATH
+  };
+  https.createServer(sslOptions, serverApp.getApp()).listen(port, () => {
+    debug(`HTTPS server running on port ${port}...`);
+  });
+} else if (process.env.NODE_ENV === 'development') {
+  server = serverApp.getApp().listen(port, () => {
+    debug(`Server running on port ${port}...`);
+  });
+}
+
+export { server };
 
 // Listener for unhandledRejection event
 unhandledRejectionHandler(server);

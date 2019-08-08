@@ -1,3 +1,4 @@
+import fs from 'fs';
 import https from 'https';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -39,8 +40,8 @@ let server: Server;
 
 if (process.env.NODE_ENV === 'production') {
   const sslOptions = {
-    key: process.env.SSL_KEY_PATH,
-    cert: process.env.SSL_CERT_PATH
+    key: fs.readFileSync(process.env.SSL_KEY_PATH),
+    cert: fs.readFileSync(process.env.SSL_CERT_PATH)
   };
   https.createServer(sslOptions, serverApp.getApp()).listen(port, () => {
     debug(`HTTPS server running on port ${port}...`);

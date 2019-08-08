@@ -9,7 +9,7 @@
     "build:tslint": "./node_modules/.bin/tslint -c ./tslint.json -p ./tsconfig.json",
     "debug": "npm run build && cpx ./server/config.env ./dist/server  && npm run local:debug ./dist/server/bin/server.js",
     "prestart": "npm run build",
-    "start": "set \"DEBUG=gf:*\" && node ./dist/server/bin/server.js",
+    "start": "node ./dist/server/bin/server.js",
     "start:dev": "set \"DEBUG=gf:*\" && npm run local:nodemon",
     "test": "npm run local:ts-mocha -p tsconfig.json tests/**/*.spec.ts",
     "test:coverage": "npm run local:jest --coverage",

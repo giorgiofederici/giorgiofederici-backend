@@ -9,8 +9,8 @@
     "experimentalDecorators": true,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "./dist",
+    "outDir": "./compiled",
     "typeRoots": ["./node_modules/@types/"]
   },
-  "include": ["./server/**/*", "./tests/**/*.spec.ts"]
+  "include": ["./import-data.ts"]
 }

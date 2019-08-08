@@ -11,11 +11,15 @@ import hpp from 'hpp';
 import compression from 'compression';
 // TODO: Check how to create xss-clean @types
 const xss = require('xss-clean');
+import { globalErrorHandler } from './controllers/error-controller';
+import { skillRouter } from './routes/skill-routes';
+import { userRouter } from './routes/user-routes';
+import { AppError } from './errors/app-error';
 
 // The server application.
 export class ServerApp {
   // The express application.
-  public app: express.Application;
+  private app: express.Application;
 
   public static bootstrap(): ServerApp {
     return new ServerApp();
@@ -32,7 +36,11 @@ export class ServerApp {
     this.configRoutes();
   }
 
-  configMiddlewares() {
+  public getApp() {
+    return this.app;
+  }
+
+  private configMiddlewares() {
     // configure CORS
     const corsOptions: cors.CorsOptions = {
       allowedHeaders: [
@@ -44,7 +52,7 @@ export class ServerApp {
       ],
       credentials: true,
       methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-      origin: 'http://localhost',
+      origin: 'http://localhost:4200',
       preflightContinue: false
     };
 
@@ -67,7 +75,7 @@ export class ServerApp {
 
     // Limit requests
     const limiter = new RateLimit({
-      max: 100,
+      max: 200,
       windowMs: 60 * 60 * 1000,
       message: 'Too many requests from this IP. Please, try again in an hour'
     });
@@ -100,5 +108,15 @@ export class ServerApp {
     });
   }
 
-  configRoutes() {}
+  private configRoutes() {
+    this.app.use('/api/v1/users', userRouter);
+    this.app.use('/api/v1/skills', skillRouter);
+
+    this.app.all('*', (req, res, next) => {
+      next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+    });
+
+    // ERROR MIDDLEWARE
+    this.app.use(globalErrorHandler);
+  }
 }

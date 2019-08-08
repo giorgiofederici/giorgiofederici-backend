@@ -43,9 +43,11 @@ if (process.env.NODE_ENV === 'production') {
     key: fs.readFileSync(process.env.SSL_KEY_PATH),
     cert: fs.readFileSync(process.env.SSL_CERT_PATH)
   };
-  https.createServer(sslOptions, serverApp.getApp()).listen(port, () => {
-    debug(`HTTPS server running on port ${port}...`);
-  });
+  server = https
+    .createServer(sslOptions, serverApp.getApp())
+    .listen(port, () => {
+      debug(`HTTPS server running on port ${port}...`);
+    });
 } else if (process.env.NODE_ENV === 'development') {
   server = serverApp.getApp().listen(port, () => {
     debug(`Server running on port ${port}...`);

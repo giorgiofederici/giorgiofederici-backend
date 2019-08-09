@@ -49,7 +49,7 @@ HTTPS enabled thanks to [Let's Encrypt](https://letsencrypt.org/) certificate.
 
 # Author
 
-Giorgio Federici
+[Giorgio Federici](https://giorgiofederici.com)
 
 # License
 

@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - '11'
+branches:
+  only:
+    - development
 cache:
   directories:
     - node_modules
@@ -17,6 +20,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: deploy.sh
+  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@116.203.146.153:/root/test
   on:
     branch: development

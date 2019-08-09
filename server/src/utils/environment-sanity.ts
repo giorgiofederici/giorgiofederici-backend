@@ -6,7 +6,7 @@ const envDebug = debug('giorgiofederici:environment-sanity');
 export const environmentSanityCheck = () => {
   if (!process.env.DATABASE_URI) {
     const msg =
-      'No mongo connection string. Set MONGODB_URI environment variable.';
+      'No mongo connection string. Set DATABASE_URI environment variable.';
     envDebug(msg);
     throw new EnvError(msg);
   }

@@ -18,13 +18,13 @@ before_install:
 before_deploy:
   - npm run build
 deploy:
-  provider: script
-  skip_cleanup: true
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@116.203.146.153:/root/production
-  on:
-    branch: development
-  provider: script
-  skip_cleanup: true
-  script: chmod +x deploy.sh
-  on:
-    branch: development
+  - provider: script
+    script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@116.203.146.153:/root/production
+    skip_cleanup: true
+    on:
+      branch: development
+  - provider: script
+    script: chmod +x deploy.sh
+    skip_cleanup: true
+    on:
+      branch: development

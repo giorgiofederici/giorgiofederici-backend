@@ -1,4 +1,4 @@
-#!/bin/bash
+-#!/bin/bash
 set -e
 echo "Ciao!"
 echo $TRAVIS_BUILD_DIR

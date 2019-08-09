@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-  - '11'
+- '11'
 cache:
   directories:
-    - node_modules
+  - node_modules
 addons:
   ssh_known_hosts: 116.203.146.153
 before_install:
-  - openssl aes-256-cbc -K $encrypted_146c3e4c94fa_key -iv $encrypted_146c3e4c94fa_iv
-    -in giorgiofederici_rsa.enc -out giorgiofederici_rsa -d
-  - eval "$(ssh-agent -s)"
-  - cp giorgiofederici_rsa ~/.ssh/giorgiofederici_rsa
-  - chmod 600 ~/.ssh/giorgiofederici_rsa
-  - ssh-add ~/.ssh/giorgiofederici_rsa
+- openssl aes-256-cbc -K $encrypted_146c3e4c94fa_key -iv $encrypted_146c3e4c94fa_iv
+  -in giorgiofederici_rsa.enc -out giorgiofederici_rsa -d
+- eval "$(ssh-agent -s)"
+- cp giorgiofederici_rsa ~/.ssh/giorgiofederici_rsa
+- chmod 600 ~/.ssh/giorgiofederici_rsa
+- ssh-add ~/.ssh/giorgiofederici_rsa
 deploy:
   provider: script
   skip_cleanup: true

@@ -12,9 +12,11 @@ before_install:
   - cp deploy_rsa ~/.ssh/deploy_rsa
   - chmod 600 ~/.ssh/deploy_rsa
   - ssh-add ~/.ssh/deploy_rsa
+before_deploy:
+  - npm run build
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@116.203.146.153:/root/test
+  script: deploy.sh
   on:
     branch: development

@@ -15,6 +15,7 @@ before_install:
   - cp deploy_rsa ~/.ssh/deploy_rsa
   - chmod 600 ~/.ssh/deploy_rsa
   - ssh-add ~/.ssh/deploy_rsa
+  - chmod +x deploy.sh
 before_deploy:
   - npm run build
 deploy:

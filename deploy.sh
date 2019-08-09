@@ -6,6 +6,6 @@ ssh root@116.203.146.153 <<EOF
  cd /root/production
  npm install
  /usr/local/nvm/v11.14.0/lib/node_modules/forever/bin/forever stopall
- /usr/local/nvm/v11.14.0/lib/node_modules/forever/bin/forever /root/production/dist/server/bin/server.js
+ /usr/local/nvm/v11.14.0/lib/node_modules/forever/bin/forever start /root/production/dist/server/bin/server.js
  exit
 EOF

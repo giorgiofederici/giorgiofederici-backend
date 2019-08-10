@@ -1,4 +1,4 @@
-# Giorgio Federici Wep Application (Backend)
+# Giorgio Federici Web Application (Backend)
 
 An API server created to support the web application frontend.
 Always a work in progress!

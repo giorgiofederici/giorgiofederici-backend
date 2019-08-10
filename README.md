@@ -5,7 +5,7 @@ Always a work in progress!
 
 # Architecture
 
-The API server is a NodeJS, supported by Express and Mongoose middlewares. It follows a Model/Controller (thin controllers, fat models) pattern, as no views are involved in the backend (email templates excluded).
+The API server is a NodeJs server, supported by Express and Mongoose middlewares. It follows a Model/Controller (thin controllers, fat models) pattern, as no views are involved in the backend (email templates excluded).
 
 The source code is written in Typescript and then compiled in JavaScript for the production build.
 
@@ -17,7 +17,7 @@ The API server is deployed on a Debian 9 VM in the [Hetzner Cloud](https://www.h
 
 The CI/CD works with [Travis CI](https://travis-ci.org/).
 
-As a custom VPS is not supported by Travis CI providers, a custom deploy has been created with the 'script' provider and SSH connections.
+As custom VPSs are not supported by Travis CI providers, a custom deploy has been created with the 'script' provider and SSH connections.
 
 For details, check the .travis.yml and deploy.sh files.
 

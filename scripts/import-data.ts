@@ -2,6 +2,7 @@ import fs from 'fs';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import { Skill } from '../server/src/models/skill-model';
+import { Project } from '../server/src/models/project-model';
 
 dotenv.config({ path: `./server/config.env` });
 
@@ -17,15 +18,19 @@ mongoose
   })
   .then(() => console.log('DB connection successful!'));
 
-// READ JSON FILE
+// READ JSON FILES
 const skills = JSON.parse(
   fs.readFileSync(`${__dirname}/../../skills.json`, 'utf-8')
+);
+const projects = JSON.parse(
+  fs.readFileSync(`${__dirname}/../../projects.json`, 'utf-8')
 );
 
 // IMPORT DATA INTO DB
 const importData = async () => {
   try {
     await Skill.create(skills);
+    await Project.create(projects);
     console.log('Data successfully loaded!');
   } catch (err) {
     console.log(err);
@@ -37,6 +42,7 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Skill.deleteMany({});
+    await Project.deleteMany({});
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);

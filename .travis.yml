@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - '11'
+branches:
+  only:
+    - production
+cache:
+  directories:
+    - node_modules
+addons:
+  ssh_known_hosts: 116.203.146.153
+before_install:
+  - openssl aes-256-cbc -K $encrypted_1fc90f464345_key -iv $encrypted_1fc90f464345_iv -in deploy_rsa.enc -out deploy_rsa -d
+  - eval "$(ssh-agent -s)"
+  - cp deploy_rsa ~/.ssh/deploy_rsa
+  - chmod 600 ~/.ssh/deploy_rsa
+  - ssh-add ~/.ssh/deploy_rsa
+before_deploy:
+  - npm run build
+deploy:
+  - provider: script
+    script: chmod +x deploy.sh && sh ./deploy.sh
+    skip_cleanup: true
+    on:
+      branch: production

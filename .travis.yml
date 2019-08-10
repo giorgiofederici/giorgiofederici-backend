@@ -3,7 +3,7 @@ node_js:
   - '11'
 branches:
   only:
-    - development
+    - production
 cache:
   directories:
     - node_modules
@@ -22,4 +22,4 @@ deploy:
     script: chmod +x deploy.sh && sh ./deploy.sh
     skip_cleanup: true
     on:
-      branch: development
+      branch: production

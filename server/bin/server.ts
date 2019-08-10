@@ -32,7 +32,7 @@ mongoose
   })
   .then(() => debug('DB connection successful!'));
 
-const port = process.env.PORT || 3000;
+const port = process.env.BACKEND_PORT || 3000;
 // Express App
 const serverApp = ServerApp.bootstrap();
 

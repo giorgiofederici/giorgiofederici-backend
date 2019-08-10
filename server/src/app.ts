@@ -52,18 +52,19 @@ export class ServerApp {
       ],
       credentials: true,
       methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-      origin: 'http://localhost:4200',
       preflightContinue: false
     };
 
-    this.app.use(cors(corsOptions));
+    if (process.env.NODE_ENV === 'development') {
+      corsOptions.origin = 'http://localhost:4200';
+    } else if (process.env.NODE_ENV === 'production') {
+      corsOptions.origin = [
+        'https://giorgiofederici.com',
+        'https://www.giorgiofederici.com'
+      ];
+    }
 
-    // Serve only the static files form the dist directory
-    this.app.use(
-      express.static(
-        path.resolve(__dirname + '../../../client/mean-giorgiofederici/')
-      )
-    );
+    this.app.use(cors(corsOptions));
 
     // Set security HTTP Headers
     this.app.use(helmet());

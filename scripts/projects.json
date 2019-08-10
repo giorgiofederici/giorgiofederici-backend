@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Giorgio Federici (Frontend)",
+    "description": "Angular2+ SPA",
+    "image": "assets/images/GF-logo.png",
+    "repository": "https://github.com/giorgiofederici/giorgiofederici-frontend"
+  },
+  {
+    "name": "Giorgio Federici (Backend)",
+    "description": "API Server - NodeJs, Express, MongoDB",
+    "image": "assets/images/GF-logo.png",
+    "repository": "https://github.com/giorgiofederici/giorgiofederici-backend"
+  }
+]

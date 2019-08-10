@@ -14,6 +14,7 @@ const xss = require('xss-clean');
 import { globalErrorHandler } from './controllers/error-controller';
 import { skillRouter } from './routes/skill-routes';
 import { userRouter } from './routes/user-routes';
+import { projectRouter } from './routes/project-routes';
 import { AppError } from './errors/app-error';
 
 // The server application.
@@ -112,6 +113,7 @@ export class ServerApp {
   private configRoutes() {
     this.app.use('/api/v1/users', userRouter);
     this.app.use('/api/v1/skills', skillRouter);
+    this.app.use('/api/v1/projects', projectRouter);
 
     this.app.all('*', (req, res, next) => {
       next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

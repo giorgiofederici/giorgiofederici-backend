@@ -56,6 +56,7 @@ export class ServerApp {
       preflightContinue: false
     };
 
+    // TODO: Create env vars for origin
     if (process.env.NODE_ENV === 'development') {
       corsOptions.origin = 'http://localhost:4200';
     } else if (process.env.NODE_ENV === 'production') {

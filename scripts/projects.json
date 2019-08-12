@@ -1,14 +1,46 @@
 [
   {
     "name": "Giorgio Federici (Frontend)",
-    "description": "Angular2+ SPA",
-    "image": "assets/images/GF-logo.png",
-    "repository": "https://github.com/giorgiofederici/giorgiofederici-frontend"
+    "description": "Giorgio Federici's web app frontend (SPA)",
+    "image": "assets/images/gf-fe-cover.png",
+    "repository": "https://github.com/giorgiofederici/giorgiofederici-frontend",
+    "link": "https://giorgiofederici.com"
   },
   {
     "name": "Giorgio Federici (Backend)",
-    "description": "API Server - NodeJs, Express, MongoDB",
-    "image": "assets/images/GF-logo.png",
-    "repository": "https://github.com/giorgiofederici/giorgiofederici-backend"
+    "description": "Giorgio Federici's web app backend (API Server)",
+    "image": "assets/images/nodejs-mongo-cover.png",
+    "repository": "https://github.com/giorgiofederici/giorgiofederici-backend",
+    "link": "https://giorgiofederici.com"
+  },
+  {
+    "name": "Natours",
+    "description": "A web app to book, pay and manage tours",
+    "image": "assets/images/natours-cover.jpg",
+    "link": "https://natours-gf.herokuapp.com"
+  },
+  {
+    "name": "Angiot Pictures",
+    "description": "Responsive HTML template that can be used for gallery websites or blogs",
+    "image": "assets/images/angiot-pictures-cover.png",
+    "repository": "https://github.com/giorgiofederici/angiot-pictures"
+  },
+  {
+    "name": "Angular Superheroes",
+    "description": "A very basic Angular app to showcase fundamentals",
+    "image": "assets/images/angular-cover.png",
+    "repository": "https://github.com/giorgiofederici/angular-superheroes"
+  },
+  {
+    "name": "Spring Java Portal",
+    "description": "Spring Java Portal is a showcase and reference for the future",
+    "image": "assets/images/spring-cover.png",
+    "repository": "https://github.com/giorgiofederici/spring-java-portal/tree/master/spring-jp"
+  },
+  {
+    "name": "JavaScript games",
+    "description": "Simple classic games realized in JavaScript",
+    "image": "assets/images/js-cover.png",
+    "repository": "https://github.com/giorgiofederici/javascript-games"
   }
 ]

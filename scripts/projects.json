@@ -4,43 +4,50 @@
     "description": "Giorgio Federici's web app frontend (SPA)",
     "image": "assets/images/gf-fe-cover.png",
     "repository": "https://github.com/giorgiofederici/giorgiofederici-frontend",
-    "link": "https://giorgiofederici.com"
+    "link": "https://giorgiofederici.com",
+    "index": 1
   },
   {
     "name": "Giorgio Federici (Backend)",
     "description": "Giorgio Federici's web app backend (API Server)",
     "image": "assets/images/nodejs-mongo-cover.png",
     "repository": "https://github.com/giorgiofederici/giorgiofederici-backend",
-    "link": "https://giorgiofederici.com"
+    "link": "https://giorgiofederici.com",
+    "index": 2
   },
   {
     "name": "Natours",
     "description": "A web app to book, pay and manage tours",
     "image": "assets/images/natours-cover.jpg",
-    "link": "https://natours-gf.herokuapp.com"
+    "link": "https://natours-gf.herokuapp.com",
+    "index": 3
   },
   {
     "name": "Angiot Pictures",
     "description": "Responsive HTML template that can be used for gallery websites or blogs",
     "image": "assets/images/angiot-pictures-cover.png",
-    "repository": "https://github.com/giorgiofederici/angiot-pictures"
+    "repository": "https://github.com/giorgiofederici/angiot-pictures",
+    "index": 4
   },
   {
     "name": "Angular Superheroes",
     "description": "A very basic Angular app to showcase fundamentals",
     "image": "assets/images/angular-cover.png",
-    "repository": "https://github.com/giorgiofederici/angular-superheroes"
+    "repository": "https://github.com/giorgiofederici/angular-superheroes",
+    "index": 5
   },
   {
     "name": "Spring Java Portal",
     "description": "Spring Java Portal is a showcase and reference for the future",
     "image": "assets/images/spring-cover.png",
-    "repository": "https://github.com/giorgiofederici/spring-java-portal/tree/master/spring-jp"
+    "repository": "https://github.com/giorgiofederici/spring-java-portal/tree/master/spring-jp",
+    "index": 6
   },
   {
     "name": "JavaScript games",
     "description": "Simple classic games realized in JavaScript",
     "image": "assets/images/js-cover.png",
-    "repository": "https://github.com/giorgiofederici/javascript-games"
+    "repository": "https://github.com/giorgiofederici/javascript-games",
+    "index": 7
   }
 ]

@@ -13,6 +13,8 @@ export const schema: Schema = new Schema({
   },
   image: String,
   repository: String,
+  link: String,
+  index: Number,
   createdAt: {
     type: Date,
     default: Date.now(),

@@ -1,7 +1,7 @@
 module.exports = {
   extends: '@istanbuljs/nyc-config-typescript',
   // reporter: ['text', 'html', 'text-summary', 'lcov'],
-  reporter: ['text'],
+  reporter: ['text', 'html', 'text-summary', 'lcov'],
   // include: ['./server/**/*.ts'],
   include: ['server/*.ts', 'server/**/*.ts'],
   extension: ['.ts'],

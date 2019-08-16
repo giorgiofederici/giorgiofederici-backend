@@ -5,7 +5,7 @@ branches:
   only:
     - production
 script:
-  - npm run test:ci
+  - npm run test
 cache:
   directories:
     - node_modules

@@ -115,6 +115,7 @@
       "text-summary",
       "lcov"
     ],
+    "all": true,
     "include": [
       "./server/**/*.ts"
     ],

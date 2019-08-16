@@ -112,7 +112,8 @@
     "reporter": [
       "text",
       "html",
-      "lcov"
+      "lcov",
+      "text-summary"
     ],
     "include": [
       "server/**/*.ts"

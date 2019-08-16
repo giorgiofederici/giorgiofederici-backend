@@ -115,9 +115,14 @@
       "text-summary",
       "lcov"
     ],
-    "all": true,
     "include": [
       "./server/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
     ],
     "check-coverage": false
   }

@@ -4,6 +4,8 @@ node_js:
 branches:
   only:
     - production
+script:
+  - npm run test:ci
 cache:
   directories:
     - node_modules

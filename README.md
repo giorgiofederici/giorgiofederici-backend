@@ -1,5 +1,8 @@
 # Giorgio Federici Web Application (Backend)
 
+[![Build Status](https://travis-ci.org/giorgiofederici/giorgiofederici-backend.svg?branch=production)](https://travis-ci.org/giorgiofederici/giorgiofederici-backend)
+[![Coverage Status](https://coveralls.io/repos/github/giorgiofederici/giorgiofederici-backend/badge.svg?branch=production)](https://coveralls.io/github/giorgiofederici/giorgiofederici-backend?branch=production)
+
 An API server created to support the web application frontend.
 Always a work in progress!
 

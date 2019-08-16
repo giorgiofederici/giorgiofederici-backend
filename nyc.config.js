@@ -3,8 +3,9 @@ module.exports = {
   // reporter: ['text', 'html', 'text-summary', 'lcov'],
   reporter: ['text'],
   // include: ['./server/**/*.ts'],
-  all: true,
+  include: ['server/*.ts', 'server/**/*.ts'],
   extension: ['.ts'],
+  all: true,
   require: ['ts-node/register'],
   'check-coverage': false
 };

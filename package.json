@@ -16,7 +16,7 @@
     "test": "./node_modules/.bin/mocha",
     "coverage": "nyc npm run test",
     "test:ts-mocha": "npm run local:ts-mocha -p tsconfig.json tests/**/*.spec.ts",
-    "test:ci": "NODE_ENV=test && nyc npm run test && cat ./coverage/lcov.info | coveralls",
+    "test:ci": "nyc npm run test && cat ./coverage/lcov.info | coveralls",
     "test:coverage": "npm run local:jest --coverage",
     "local:debug": "./node_modules/.bin/ndb",
     "local:jest": "./node_modules/.bin/jest",

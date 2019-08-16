@@ -1,6 +1,6 @@
-import { Schema } from 'mongoose';
+import mongoose from 'mongoose';
 
-export const schema: Schema = new Schema({
+export const schema: mongoose.Schema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'A project must have a name.'],
@@ -15,6 +15,12 @@ export const schema: Schema = new Schema({
   repository: String,
   link: String,
   index: Number,
+  skills: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'Skill'
+    }
+  ],
   createdAt: {
     type: Date,
     default: Date.now(),

@@ -13,7 +13,7 @@
     "stop": "./node_modules/.bin/forever stopall",
     "start:dev": "set \"NODE_ENV=development\" && set \"DEBUG=gf:*\" && npm run local:nodemon",
     "start:prod": "npm run build && cpx ./server/config.env ./dist/server && set \"NODE_ENV=production\" && set \"DEBUG=gf:*\" && node ./dist/server/bin/server.js",
-    "test": "tsc && nyc mocha --opts ./tests/mocha.opts",
+    "test": "./node_modules/.bin/mocha",
     "coverage": "nyc npm run test",
     "test:ts-mocha": "npm run local:ts-mocha -p tsconfig.json tests/**/*.spec.ts",
     "test:ci": "NODE_ENV=test && nyc npm run test && cat ./coverage/lcov.info | coveralls",

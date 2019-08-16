@@ -116,7 +116,7 @@
       "lcov"
     ],
     "include": [
-      "server/**/*.ts"
+      "./server/**/*.ts"
     ],
     "check-coverage": false
   }

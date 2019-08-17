@@ -6,5 +6,6 @@ import debug from 'debug';
  */
 
 export const cDebug = (filename: string) => {
+  console.log('sono in debug');
   return debug(`gf:${path.basename(filename, '.ts')}`);
 };

@@ -32,10 +32,8 @@ describe('Create server', () => {
         rewiremock(() => import('../utils/custom-debug'))
           .nonStrict()
           .with({
-            cDebug: (filename: string) => {
-              return function(msg: string) {
-                return `${filename} ${msg}`;
-              };
+            cDebug: (filename: string, msg: string) => {
+              return `${filename} ${msg}`;
             }
           });
       }

@@ -4,7 +4,7 @@ import { createHttpsServer } from './create-https-server';
 import { createExpressApp } from './create-app';
 import { cDebug } from '../utils/custom-debug';
 
-export const debug = (msg: string) => cDebug(__filename)(msg);
+export const debug = (msg: string) => cDebug(__filename, msg);
 
 export const port = process.env.BACKEND_PORT || 3000;
 

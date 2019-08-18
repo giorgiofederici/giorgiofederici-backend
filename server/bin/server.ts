@@ -11,10 +11,10 @@ import {
 } from '../src/errors/error-handlers';
 import { Server } from 'http';
 
-const debug = cDebug(__filename);
+// const debug = cDebug(__filename);
 
 // Listen for the uncaught exceptions
-uncaughtExceptionHandler();
+// uncaughtExceptionHandler();
 
 // Set the environment variables, works only in DEV
 dotenv.config({ path: `${__dirname}/../config.env` });
@@ -32,7 +32,7 @@ mongoose
   })
   .then(() => debug('DB connection successful!'));
 
-const port = process.env.BACKEND_PORT || 3000;
+/* const port = process.env.BACKEND_PORT || 3000;
 // Express App
 const serverApp = ServerApp.bootstrap();
 
@@ -54,10 +54,10 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-export { server };
+export { server }; */
 
 // Listener for unhandledRejection event
-unhandledRejectionHandler(server);
+// unhandledRejectionHandler(server);
 
 process.on('SIGTERM', () => {
   debug('SIGTERM received. Shutting down gracefully...');

@@ -7,13 +7,13 @@ export const createExpressApp = () => {
   const app = express();
 
   // Configure app middlewares
-  // configExpressApp(app);
+  configExpressApp(app);
 
   // Configure app routes
-  // configureExpressAppRoutes(app);
+  configureExpressAppRoutes(app);
 
   // Configure global error handler
-  // configExpressAppGlobalErrorMiddleware(app);
+  configExpressAppGlobalErrorMiddleware(app);
 
   return app;
 };

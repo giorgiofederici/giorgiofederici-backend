@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+/* import { expect } from 'chai';
 import { rewiremock } from '../../../tests/rewiremock';
 
 describe('Create express app', () => {
@@ -17,4 +17,4 @@ describe('Create express app', () => {
     const app = createAppModuleMock.createExpressApp();
     expect(app).to.be.equal('mocked');
   });
-});
+}); */

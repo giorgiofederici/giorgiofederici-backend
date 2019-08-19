@@ -1,16 +1,16 @@
 import express from 'express';
-import { configExpressApp } from './config-app-middlewares';
-import { configureExpressAppRoutes } from './config-app-routes';
+import { configExpressAppMiddlewares } from './config-app-middlewares';
+import { configExpressAppRoutes } from './config-app-routes';
 import { configExpressAppGlobalErrorMiddleware } from './config-app-global-error-middleware';
 
 export const createExpressApp = () => {
   const app = express();
 
   // Configure app middlewares
-  configExpressApp(app);
+  configExpressAppMiddlewares(app);
 
   // Configure app routes
-  configureExpressAppRoutes(app);
+  configExpressAppRoutes(app);
 
   // Configure global error handler
   configExpressAppGlobalErrorMiddleware(app);

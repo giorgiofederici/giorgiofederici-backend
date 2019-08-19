@@ -11,7 +11,7 @@ import compression from 'compression';
 // TODO: Check how to create xss-clean @types
 const xss = require('xss-clean');
 
-export const configExpressApp = (app: any) => {
+export const configExpressAppMiddlewares = (app: any) => {
   // configure CORS
   const corsOptions: cors.CorsOptions = {
     allowedHeaders: [

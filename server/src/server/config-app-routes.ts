@@ -4,7 +4,7 @@ import { userRouter } from '../routes/user-routes';
 import { projectRouter } from '../routes/project-routes';
 import { AppError } from '../errors/app-error';
 
-export const configureExpressAppRoutes = (app: any) => {
+export const configExpressAppRoutes = (app: any) => {
   app.use('/api/v1/users', userRouter);
   app.use('/api/v1/skills', skillRouter);
   app.use('/api/v1/projects', projectRouter);

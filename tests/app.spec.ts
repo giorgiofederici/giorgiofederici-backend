@@ -1,4 +1,4 @@
-import chai from 'chai';
+/* import chai from 'chai';
 import { ServerApp } from '../server/src/app';
 import {
   TestConstants,
@@ -42,11 +42,9 @@ describe('Server App', () => {
       chai.expect(checkAppMiddleware(app, 'corsMiddleware')).true;
     });
 
-    /*
     it('should have serve static middleware', () => {
       chai.expect(checkAppMiddleware(app, 'serveStatic')).true;
     });
-    */
 
     it('should have helmet middleware', () => {
       chai.expect(checkAppMiddleware(app, 'helmet')).true;
@@ -92,3 +90,4 @@ describe('Server App', () => {
     });
   });
 });
+ */

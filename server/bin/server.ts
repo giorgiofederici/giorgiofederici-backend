@@ -1,67 +1,35 @@
-import fs from 'fs';
-import https from 'https';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import { ServerApp } from '../src/app';
-import { cDebug } from '../src/utils/custom-debug';
-import { environmentSanityCheck } from '../src/utils/environment-sanity';
+import { Server } from 'http';
+import { createServer } from '../src/server/create-server';
 import {
   uncaughtExceptionHandler,
   unhandledRejectionHandler
 } from '../src/errors/error-handlers';
-import { Server } from 'http';
+import { configEnvironment } from '../src/environment/config-environment';
+import { connectDB } from '../src/db/db-connection';
 
-const debug = cDebug(__filename);
+export function start(): Server {
+  // Listen for the uncaught exceptions
+  uncaughtExceptionHandler();
 
-// Listen for the uncaught exceptions
-uncaughtExceptionHandler();
+  // Set the environment variables, works only in DEV
+  configEnvironment();
 
-// Set the environment variables, works only in DEV
-dotenv.config({ path: `${__dirname}/../config.env` });
-environmentSanityCheck();
+  // connect DB
+  connectDB();
 
-const DB = process.env.DATABASE_URI.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD
-);
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-  })
-  .then(() => debug('DB connection successful!'));
+  const server: Server = createServer();
 
-const port = process.env.BACKEND_PORT || 3000;
-// Express App
-const serverApp = ServerApp.bootstrap();
+  // Listener for unhandledRejection event
+  unhandledRejectionHandler(server);
 
-let server: Server;
-
-if (process.env.NODE_ENV === 'production') {
-  const sslOptions = {
-    key: fs.readFileSync(process.env.SSL_KEY_PATH),
-    cert: fs.readFileSync(process.env.SSL_CERT_PATH)
-  };
-  server = https
-    .createServer(sslOptions, serverApp.getApp())
-    .listen(port, () => {
-      debug(`HTTPS server running on port ${port}...`);
+  /*
+  process.on('SIGTERM', () => {
+    debug('SIGTERM received. Shutting down gracefully...');
+    server.close(() => {
+      debug('Process terminated!');
     });
-} else if (process.env.NODE_ENV === 'development') {
-  server = serverApp.getApp().listen(port, () => {
-    debug(`Server running on port ${port}...`);
   });
+  */
+
+  return server;
 }
-
-export { server };
-
-// Listener for unhandledRejection event
-unhandledRejectionHandler(server);
-
-process.on('SIGTERM', () => {
-  debug('SIGTERM received. Shutting down gracefully...');
-  server.close(() => {
-    debug('Process terminated!');
-  });
-});

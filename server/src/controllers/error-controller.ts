@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 import { CastError } from 'mongoose';
-import { cDebug } from '../utils/custom-debug';
 import { AppError } from '../errors/app-error';
+import { cDebug } from '../utils/custom-debug';
+
+export const debug = (msg: string) => cDebug(__filename, msg);
 
 // TODO: Look for specific error types and replace any
-
-const debug = cDebug(__filename);
 
 const handleCastErrorDB = (err: CastError) => {
   const message = `Invalid ${err.path}: ${err.value}.`;
@@ -55,7 +55,7 @@ const sendErrorProd = (err: any, req: Request, res: Response) => {
     }
     // B) Programming or other unknow error: don't leak error details
     // 1) Log error
-    debug('ERROR!', err);
+    debug(`ERROR! - ${err}`);
 
     // 2) Send generic message
     return res.status(500).json({
@@ -75,7 +75,7 @@ const sendErrorProd = (err: any, req: Request, res: Response) => {
 
   // B) Programming or other unknow error: don't leak error details
   // 1) Log error
-  debug('ERROR!', err);
+  debug(`ERROR! - ${err}`);
 
   // 2) Send generic message
   return res.status(500).json({

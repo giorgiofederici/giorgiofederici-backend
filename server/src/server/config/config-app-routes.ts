@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
-import { skillRouter } from '../routes/skill-routes';
-import { userRouter } from '../routes/user-routes';
-import { projectRouter } from '../routes/project-routes';
-import { AppError } from '../errors/app-error';
+import { skillRouter } from '../../routes/skill-routes';
+import { userRouter } from '../../routes/user-routes';
+import { projectRouter } from '../../routes/project-routes';
+import { AppError } from '../../errors/app-error';
 
 export const configExpressAppRoutes = (app: any) => {
   app.use('/api/v1/users', userRouter);

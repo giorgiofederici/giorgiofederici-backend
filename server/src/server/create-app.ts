@@ -1,7 +1,7 @@
 import express from 'express';
-import { configExpressAppMiddlewares } from './config-app-middlewares';
-import { configExpressAppRoutes } from './config-app-routes';
-import { configExpressAppGlobalErrorMiddleware } from './config-app-global-error-middleware';
+import { configExpressAppMiddlewares } from './config/config-app-middlewares';
+import { configExpressAppRoutes } from './config/config-app-routes';
+import { configExpressAppGlobalErrorMiddleware } from './config/config-app-global-error-middleware';
 
 export const createExpressApp = () => {
   const app = express();

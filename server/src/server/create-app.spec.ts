@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { rewiremock } from '../../../tests/rewiremock';
-import * as configAppMiddlewaresModule from './config-app-middlewares';
-import * as configAppRoutesModule from './config-app-routes';
-import * as configAppGlobalErrorMiddlewareModule from './config-app-global-error-middleware';
+import * as configAppMiddlewaresModule from './config/config-app-middlewares';
+import * as configAppRoutesModule from './config/config-app-routes';
+import * as configAppGlobalErrorMiddlewareModule from './config/config-app-global-error-middleware';
 
 // Vars
 let configAppMiddlewaresStub: sinon.SinonStub;
@@ -19,13 +19,15 @@ const mockCreateAppModule = async () => {
         .nonStrict()
         .withDefault(() => 'mocked');
 
-      rewiremock(() => import('./config-app-middlewares')).with({
+      rewiremock(() => import('./config/config-app-middlewares')).with({
         configExpressAppMiddlewares: configAppMiddlewaresStub
       });
-      rewiremock(() => import('./config-app-routes')).with({
+      rewiremock(() => import('./config/config-app-routes')).with({
         configExpressAppRoutes: configAppRoutesStub
       });
-      rewiremock(() => import('./config-app-global-error-middleware')).with({
+      rewiremock(() =>
+        import('./config/config-app-global-error-middleware')
+      ).with({
         configExpressAppGlobalErrorMiddleware: configAppGlobalErrorMiddlewareStub
       });
     }

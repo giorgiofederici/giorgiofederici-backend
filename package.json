@@ -96,7 +96,7 @@
     "node-mocks-http": "^1.7.6",
     "nyc": "^14.1.1",
     "rewiremock": "^3.13.7",
-    "shelljs": "^0.8.3",
+    "shelljs": "^0.8.5",
     "sinon": "^7.3.2",
     "source-map-support": "^0.5.13",
     "supertest": "^4.0.2",
